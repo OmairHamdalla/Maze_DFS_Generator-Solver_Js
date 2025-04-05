@@ -9,10 +9,14 @@
 <body>
     <div class="container">
         <h1>Maze Generator</h1>
+        <div class="menu">
+            <button id="startGameButton">Play Maze</button>
+            <button id="testAlgorithmButton">Test Algorithm</button>
+        </div>
         <canvas id="mazeCanvas"></canvas>
-        <div class="controls">
-            <button id="solveButton">Solve Maze</button>
-            <button id="resetButton">Reset Maze</button>
+        <div class="controls" id="controls" style="display: none;">
+            <button id="solveButton">Solve</button>
+            <button id="resetButton">Reset</button>
         </div>
     </div>
     <script src="script.js"></script>
