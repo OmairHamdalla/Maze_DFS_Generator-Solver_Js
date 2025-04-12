@@ -3,6 +3,15 @@
 
 This project is an interactive maze generator and solver built using **HTML5 Canvas** and **JavaScript**. It features animated maze generation, a manual play mode, and an auto-solving visualization using **Depth-First Search (DFS)**.
 
+### 🧪 Preview
+
+ - It starts by showing a maze box and 2 buttons:
+    - **Play game** : Where you get a generated maze and try to find your way to the goal cell.
+    - **Test Algorithm** : Where you get to visualize DFS working in 2 ways.
+      - Generate : Generates the maze with animations showing how it works.
+      - Solve : Solves the maze while visualizing its way, its visited cells, and the complete correct path.
+ - You can try the project by opening the Github deployed version <a href='https://omairhamdalla.github.io/Maze_DFS_Generator-Solver_Js/' target="_blank"> Here </a>
+
 ---
 
 ## Features
@@ -43,4 +52,5 @@ This project is an interactive maze generator and solver built using **HTML5 Can
 - The player starts at the top-left cell (0, 0).
 - You can move the player by using the arrow keys.
 - If the player reaches the bottom-right cell (rows-1, cols-1), a victory message appears.
+
 
