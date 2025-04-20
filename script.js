@@ -12,10 +12,10 @@ canvas.width = cols * cellSize;
 canvas.height = rows * cellSize;
 
 // core game state variables
-let maze = [],             // The actual maze grid
-    stack = [],            // Stack for maze generation (DFS-style)
+let maze = [],             // rhe maze grid
+    stack = [],            // Stack for maze generation
     player,                // Player position
-    solving = false,       // Are we solving the maze right now?
+    solving = false,       // solving Flag
     solvingStack = [],     // Stack for solving 
     mazeGenerated = false; // Flag to know if the maze is ready
 
@@ -24,21 +24,19 @@ solveButton.disabled = true;
 // structure maze state
 function setup(animate = false) {
     mazeGenerated = false;
-
     // Initialize 2D maze grid
     maze = Array.from({ length: rows }, (_, r) =>
         Array.from({ length: cols }, (_, c) => ({
             r, c,
             walls: [true, true, true, true], // Top, Right, Bottom, Left
             visited: false,
-            inPath: false // This is for the "solving" animation
+            inPath: false // This is for the solving animation
         }))
     );
 
     // place player at top left
     player = { r: 0, c: 0 };
-
-    // Start with the very first cell in the stack
+    // start with the first cell in the stack
     stack = [maze[0][0]];
     stack[0].visited = true;
 
@@ -81,7 +79,6 @@ function removeWalls(cell1, cell2) {
 
     if (dx === 1) [cell1.walls[3], cell2.walls[1]] = [false, false]; // cell2 is left
     else if (dx === -1) [cell1.walls[1], cell2.walls[3]] = [false, false]; // right
-
     if (dy === 1) [cell1.walls[0], cell2.walls[2]] = [false, false]; // above
     else if (dy === -1) [cell1.walls[2], cell2.walls[0]] = [false, false]; // below
 }
